@@ -5,7 +5,7 @@ import { UserRepository } from "../../../../../src/app/features/users/repositori
 import { CacheRepository } from "../../../../../src/app/shared/repositories/cache.repository";
 import { User } from "../../../../../src/app/models/user";
 
-describe.skip("Login user usecase test", () => {
+describe("Login user usecase test", () => {
   beforeAll(async () => {
     await openConnection();
   });

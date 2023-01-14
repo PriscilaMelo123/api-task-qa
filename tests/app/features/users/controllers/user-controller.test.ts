@@ -9,7 +9,7 @@ import { User } from "../../../../../src/app/models/user";
 import { Tasks } from "../../../../../src/app/models/tasks";
 import { UserRepository } from "../../../../../src/app/features/users/repositories/user.repository";
 
-describe("Get user by id - integration controller test", () => {
+describe.skip("Get user by id - integration controller test", () => {
   beforeAll(async () => await openConnection());
   afterAll(async () => await closeConnection());
 

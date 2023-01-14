@@ -7,7 +7,7 @@ import { LoginUserUseCase } from "../../../../../src/app/features/users/usecases
 import { UserController } from "../../../../../src/app/features/users/controllers/user.controller";
 import { User } from "../../../../../src/app/models/user";
 
-describe.skip("User controller tests", () => {
+describe("User controller tests", () => {
   beforeAll(async () => await openConnection());
   afterAll(async () => await closeConnection());
 

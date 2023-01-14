@@ -1,11 +1,11 @@
 import { CacheRepository } from "../../../../../src/app/shared/repositories/cache.repository";
 import { closeConnection } from "../../../../util/close-connection";
 import { openConnection } from "../../../../util/open-connection";
-import { ListUsersUseCase } from "../../../../../src/app/features/users/usecases/list-users.usecase";
-import { UserRepository } from "../../../../../src/app/features/users/repositories/user.repository";
+import { ListTasksUseCase } from "../../../../../src/app/features/tasks/usecases/list-tasks.usecase";
+import { TasksRepository } from "../../../../../src/app/features/tasks/repositories/tasks.repository";
 import { User } from "../../../../../src/app/models/user";
 
-describe("Get user usecase teste", () => {
+describe("Get task usecase teste", () => {
   beforeAll(async () => {
     await openConnection();
   });
@@ -19,16 +19,16 @@ describe("Get user usecase teste", () => {
   });
 
   const makeSut = () => {
-    const sut = new ListUsersUseCase(
-      new UserRepository(),
+    const sut = new ListTasksUseCase(
+      new TasksRepository(),
       new CacheRepository()
     );
 
     return sut;
   };
 
-  //*? FINALIZADO -- acredito que seja teste de integração
-  test("deve retornar uma lista de users do DB", async () => {
+  //*? FINALIZADO
+  test("deve retornar uma lista de tasks do DB", async () => {
     const sut = makeSut();
 
     // jest.spyOn(UserRepository.prototype, "get").mockResolvedValue(null);
@@ -41,7 +41,7 @@ describe("Get user usecase teste", () => {
   });
 
   //*? FINALIZADO
-  test("deve retornar uma lista de user caso esteja em cache", async () => {
+  test("deve retornar uma lista de tasks caso esteja em cache", async () => {
     const sut = makeSut();
 
     const user = new User("nome@teste.com", "1234");
