@@ -13,7 +13,7 @@ describe("PUT - ", () => {
   beforeAll(async () => await openConnection());
   afterAll(async () => await closeConnection());
 
-  test.skip("deve retornar status 404 e mensagem 'O User não existe' quando o id for inexistente", async () => {
+  test("deve retornar status 404 e mensagem 'O User não existe' quando o id for inexistente", async () => {
     const app = makeSut();
     jest.spyOn(UserRepository.prototype, "get").mockResolvedValue(null);
     const result = await request(app).get("/user/any_id").send({});
